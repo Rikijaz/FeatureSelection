@@ -63,7 +63,7 @@ namespace FeatureSelection.Scripts.Data
 				{
 					uint feature = keyValuePair.Key;
 					double featureValue = keyValuePair.Value;
-					Datum datum = new Datum(idValue, classValue, feature, featureValue);
+					Datum datum = new Datum(classValue, featureValue);
 					dataByFeatureAndId[feature].Add(idValue, datum);
 				}
 			}

@@ -14,11 +14,17 @@
             <e p="DataBuilder.cs" t="Include" />
             <e p="Datum.cs" t="Include" />
           </e>
-          <e p="LogLevel.cs" t="Include" />
-          <e p="LogUtility.cs" t="Include" />
+          <e p="Log" t="Include">
+            <e p="LogLevel.cs" t="Include" />
+            <e p="LogUtility.cs" t="Include" />
+          </e>
           <e p="Program.cs" t="Include" />
-          <e p="SearchStrategy.cs" t="Include" />
-          <e p="SearchUtility.cs" t="Include" />
+          <e p="SearchStrategies" t="Include">
+            <e p="BackwardSearchStrategy.cs" t="Include" />
+            <e p="ForwardSearchStrategy.cs" t="Include" />
+            <e p="SearchStrategy.cs" t="Include" />
+            <e p="SearchUtility.cs" t="Include" />
+          </e>
         </e>
       </e>
       <e p="FeatureSelection.sln" t="IncludeFlat" />

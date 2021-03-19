@@ -41,11 +41,13 @@
         <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="Scripts\Data\DataBuilder.cs" />
         <Compile Include="Scripts\Data\Datum.cs" />
-        <Compile Include="Scripts\LogLevel.cs" />
-        <Compile Include="Scripts\LogUtility.cs" />
+        <Compile Include="Scripts\Log\LogLevel.cs" />
+        <Compile Include="Scripts\Log\LogUtility.cs" />
         <Compile Include="Scripts\Program.cs" />
-        <Compile Include="Scripts\SearchStrategy.cs" />
-        <Compile Include="Scripts\SearchUtility.cs" />
+        <Compile Include="Scripts\SearchStrategies\BackwardSearchStrategy.cs" />
+        <Compile Include="Scripts\SearchStrategies\ForwardSearchStrategy.cs" />
+        <Compile Include="Scripts\SearchStrategies\SearchStrategy.cs" />
+        <Compile Include="Scripts\SearchStrategies\SearchUtility.cs" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

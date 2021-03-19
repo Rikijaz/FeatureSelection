@@ -2,15 +2,13 @@
 {
 	public readonly struct Datum
 	{
-		public Datum(uint id, double classValue, uint feature, double featureValue)
+		public Datum(double classValue, double featureValue)
 		{
 			ClassValue = classValue;
 			FeatureValue = featureValue;
 		}
 
-
 		public double ClassValue { get; }
-
 
 		public double FeatureValue { get; }
 	}

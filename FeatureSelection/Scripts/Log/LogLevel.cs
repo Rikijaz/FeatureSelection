@@ -1,4 +1,4 @@
-﻿namespace FeatureSelection.Scripts
+﻿namespace FeatureSelection.Scripts.Log
 {
 	public enum LogLevel
 	{

@@ -7,17 +7,14 @@ using FeatureSelection.Scripts.Data;
 
 #endregion
 
-namespace FeatureSelection.Scripts
+namespace FeatureSelection.Scripts.SearchStrategies
 {
 	public static class SearchUtility
 	{
 		public static float CrossValidateAccuracy(
 			Dictionary<uint, Dictionary<uint, Datum>> dataByFeatureAndId,
-		
 			uint[] features)
 		{
-		
-
 			uint[] ids = dataByFeatureAndId.First().Value.Keys.ToArray();
 
 			uint successfullyClassifiedIdCount = 0;
