@@ -11,10 +11,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ea59e96-326f-4a61-8ba5-e3f8ed2a2cce" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/FeatureSelection/Scripts/Data/IDatumIdentification.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FeatureSelection/Scripts/LogLevel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.FeatureSelection/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FeatureSelection/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FeatureSelection/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FeatureSelection/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FeatureSelection/FeatureSelection.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/FeatureSelection/FeatureSelection.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FeatureSelection/Scripts/Data/DataBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeatureSelection/Scripts/Data/DataBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FeatureSelection/Scripts/Data/Datum.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeatureSelection/Scripts/Data/Datum.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FeatureSelection/Scripts/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeatureSelection/Scripts/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FeatureSelection/bin/Debug/FeatureSelection.exe" beforeDir="false" afterPath="$PROJECT_DIR$/FeatureSelection/bin/Debug/FeatureSelection.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FeatureSelection/bin/Debug/FeatureSelection.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/FeatureSelection/bin/Debug/FeatureSelection.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FeatureSelection/obj/Debug/FeatureSelection.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/FeatureSelection/obj/Debug/FeatureSelection.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FeatureSelection/obj/Debug/FeatureSelection.exe" beforeDir="false" afterPath="$PROJECT_DIR$/FeatureSelection/obj/Debug/FeatureSelection.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FeatureSelection/obj/Debug/FeatureSelection.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/FeatureSelection/obj/Debug/FeatureSelection.pdb" afterDir="false" />
     </list>
@@ -34,14 +41,17 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/62FFEEB7-EC02-4BEA-B61E-5FBF8D44AC5B/e4/da7ffcf1/KeyValuePair`2.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/FeatureSelection/Datum.cs" />
       <option value="$PROJECT_DIR$/FeatureSelection/Program.cs" />
       <option value="$PROJECT_DIR$/FeatureSelection/DataBuilder.cs" />
       <option value="$PROJECT_DIR$/FeatureSelection/Scripts/DataBuilder.cs" />
-      <option value="$PROJECT_DIR$/FeatureSelection/Scripts/Data/Datum.cs" />
       <option value="$PROJECT_DIR$/FeatureSelection/Scripts/Data/DataBuilder.cs" />
+      <option value="$PROJECT_DIR$/FeatureSelection/Scripts/Data/Datum.cs" />
       <option value="$PROJECT_DIR$/FeatureSelection/Scripts/Program.cs" />
     </changedPaths>
   </component>
@@ -90,7 +100,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1616127271772</updated>
-      <workItem from="1616127277446" duration="5100000" />
+      <workItem from="1616127277446" duration="9641000" />
     </task>
     <servers />
   </component>

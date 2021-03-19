@@ -41,6 +41,8 @@
         <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="Scripts\Data\DataBuilder.cs" />
         <Compile Include="Scripts\Data\Datum.cs" />
+        <Compile Include="Scripts\Data\IDatumIdentification.cs" />
+        <Compile Include="Scripts\LogLevel.cs" />
         <Compile Include="Scripts\Program.cs" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

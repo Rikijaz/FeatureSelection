@@ -1,13 +1,16 @@
 ﻿namespace FeatureSelection.Scripts.Data
 {
-	public readonly struct Datum
+	public readonly struct Datum : IDatumIdentification
 	{
-		public Datum(double classValue, uint feature, double featureValue)
+		public Datum(uint id, double classValue, uint feature, double featureValue)
 		{
+			Id = id;
 			ClassValue = classValue;
 			Feature = feature;
 			FeatureValue = featureValue;
 		}
+
+		public uint Id { get; }
 
 		public double ClassValue { get; }
 

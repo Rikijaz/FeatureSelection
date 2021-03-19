@@ -13,7 +13,9 @@
           <e p="Data" t="Include">
             <e p="DataBuilder.cs" t="Include" />
             <e p="Datum.cs" t="Include" />
+            <e p="IDatumIdentification.cs" t="Include" />
           </e>
+          <e p="LogLevel.cs" t="Include" />
           <e p="Program.cs" t="Include" />
         </e>
       </e>

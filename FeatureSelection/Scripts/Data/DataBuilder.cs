@@ -12,58 +12,63 @@ namespace FeatureSelection.Scripts.Data
 {
 	public static class DataBuilder
 	{
-		public static (Dictionary<uint, List<Datum>> smallDataByFeature,
-			Dictionary<uint, List<Datum>> largeDataByFeature)
+		public static (Dictionary<uint, Dictionary<uint, Datum>> smallDataByFeature,
+			Dictionary<uint, Dictionary<uint, Datum>> largeDataByFeature)
 			BuildAllData()
 		{
-			Dictionary<uint, List<Datum>> smallDataByFeature =
-				BuildData(@"../../Resources/large_data.txt");
+			Dictionary<uint, Dictionary<uint, Datum>> smallDataByFeature =
+				BuildData(@"../../Resources/small_data.txt");
 
-			Dictionary<uint, List<Datum>> largeDataByFeature =
+			Dictionary<uint, Dictionary<uint, Datum>> largeDataByFeature =
 				BuildData(@"../../Resources/large_data.txt");
 
 			return (smallDataByFeature, largeDataByFeature);
 		}
 
-		private static Dictionary<uint, List<Datum>> BuildData(string dataFilePath)
+		private static Dictionary<uint, Dictionary<uint, Datum>> BuildData(string dataFilePath)
 		{
 			string[] lines = File.ReadAllLines(dataFilePath);
 
-			List<(double, Dictionary<uint, double>)> featureValuesByClassAndFeature =
-				new List<(double, Dictionary<uint, double>)>();
+			List<(uint, double, Dictionary<uint, double>)> featureValuesByClassAndFeature =
+				new List<(uint, double, Dictionary<uint, double>)>();
+
+			uint id = 0;
 
 			for (uint i = 0; i < lines.Length; i++)
 			{
 				(double classValue, Dictionary<uint, double> featureValuesByFeature) =
 					ParseData(lines[i]);
 
-				featureValuesByClassAndFeature.Add((classValue, featureValuesByFeature));
+				featureValuesByClassAndFeature.Add((id, classValue, featureValuesByFeature));
+
+				id++;
 			}
 
-			int featureCount = featureValuesByClassAndFeature.First().Item2.Count;
+			int featureCount = featureValuesByClassAndFeature.First().Item3.Count;
 
-			Dictionary<uint, List<Datum>> dataByFeature = new Dictionary<uint, List<Datum>>();
+			Dictionary<uint, Dictionary<uint, Datum>> dataByFeatureAndId =
+				new Dictionary<uint, Dictionary<uint, Datum>>();
 
 			for (uint i = 1; i <= featureCount; ++i)
 			{
-				dataByFeature.Add(i, new List<Datum>());
+				dataByFeatureAndId.Add(i, new Dictionary<uint, Datum>());
 			}
 
 			for (int i = 0; i < featureValuesByClassAndFeature.Count; i++)
 			{
-				(double classValue, Dictionary<uint, double> featureValuesByFeature) =
+				(uint idValue, double classValue, Dictionary<uint, double> featureValuesByFeature) =
 					featureValuesByClassAndFeature[i];
 
 				foreach (KeyValuePair<uint, double> keyValuePair in featureValuesByFeature)
 				{
 					uint feature = keyValuePair.Key;
 					double featureValue = keyValuePair.Value;
-					Datum datum = new Datum(classValue, feature, featureValue);
-					dataByFeature[feature].Add(datum);
+					Datum datum = new Datum(idValue, classValue, feature, featureValue);
+					dataByFeatureAndId[feature].Add(idValue, datum);
 				}
 			}
 
-			return dataByFeature;
+			return dataByFeatureAndId;
 		}
 
 		private static (double classValue, Dictionary<uint, double> valuesByFeature) ParseData(

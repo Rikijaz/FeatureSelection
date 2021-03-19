@@ -2,43 +2,40 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using FeatureSelection.Scripts.Data;
 
 #endregion
 
 namespace FeatureSelection.Scripts
 {
+	public static class LogUtility
+	{
+		private const LogLevel Level = LogLevel.Info;
+
+		public static void Log(object message, LogLevel logLevel)
+		{
+			if (logLevel >= Level)
+			{
+				Console.WriteLine(message);
+			}
+		}
+	}
+
 	internal static class Program
 	{
 		public static void Main(string[] args)
 		{
-			(Dictionary<uint, List<Datum>> smallDataByFeature,
-				Dictionary<uint, List<Datum>> largeDataByFeature) = DataBuilder.BuildAllData();
+			(Dictionary<uint, Dictionary<uint, Datum>> smallDataByFeatureAndId,
+					Dictionary<uint, Dictionary<uint, Datum>> largeDataByFeatureAndId) =
+				DataBuilder.BuildAllData();
 
-			Search(smallDataByFeature);
-
-			// foreach (KeyValuePair<uint, List<Datum>> pair in smallDataByFeature)
-			// {
-			// 	List<Datum> data = pair.Value;
-			//
-			// 	Console.WriteLine($"Feature '{pair.Key}'");
-			//
-			// 	if (pair.Key >= 10)
-			// 	{
-			// 		return;
-			// 	}
-			//
-			// 	for (int i = 0; i < data.Count; i++)
-			// 	{
-			// 		Console.WriteLine(
-			// 			$"Class: '{data[i].ClassValue}' Feature: '{data[i].Feature}' FeatureValue: '{data[i].FeatureValue}'");
-			// 	}
-			// }
+			Search(largeDataByFeatureAndId);
 		}
 
-		private static void Search(Dictionary<uint, List<Datum>> dataByFeature)
+		private static void Search(Dictionary<uint, Dictionary<uint, Datum>> dataByFeatureAndId)
 		{
-			HashSet<uint> unselectedFeatures = new HashSet<uint>(dataByFeature.Keys);
+			HashSet<uint> unselectedFeatures = new HashSet<uint>(dataByFeatureAndId.Keys);
 
 			HashSet<uint> selectedFeatures = new HashSet<uint>();
 
@@ -46,16 +43,23 @@ namespace FeatureSelection.Scripts
 
 			while (unselectedFeatures.Count > 0)
 			{
-				Console.WriteLine($"Traversing search tree level '{level}' ...");
+				LogUtility.Log($"Traversing search tree level '{level}' ...", LogLevel.Trace);
 				uint selectedFeature = 0;
 				float selectedFeatureAccuracy = 0;
 
 				foreach (uint unselectedFeature in unselectedFeatures)
 				{
-					Console.WriteLine($"Considering adding feature '{unselectedFeature}' ...");
+					LogUtility.Log(
+						$"Considering adding feature '{unselectedFeature}' ...",
+						LogLevel.Trace);
 
 					float accuracy =
-						CalculateCrossValidationAccuracy(dataByFeature[unselectedFeature]);
+						CalculateCrossValidationAccuracy(
+							dataByFeatureAndId,
+							selectedFeatures,
+							unselectedFeature);
+
+					LogUtility.Log($"Feature accuracy '{accuracy}'.", LogLevel.Trace);
 
 					if (accuracy >= selectedFeatureAccuracy)
 					{
@@ -64,29 +68,112 @@ namespace FeatureSelection.Scripts
 					}
 				}
 
-				Console.WriteLine(
-					$"At search tree level '{level}', added feature '{selectedFeature}'.");
+				LogUtility.Log(
+					$"At search tree level '{level}', added feature '{selectedFeature} with accuracy {selectedFeatureAccuracy}'.",
+					LogLevel.Info);
 
 				unselectedFeatures.Remove(selectedFeature);
 				selectedFeatures.Add(selectedFeature);
 				level++;
-			}
 
-			uint index = 1;
+				uint index = 1;
 
-			foreach (uint selectedFeature in selectedFeatures)
-			{
-				Console.WriteLine($"{index}. {selectedFeature}.");
-				index++;
+				foreach (uint feature in selectedFeatures)
+				{
+					LogUtility.Log($"{index}. {feature}.", LogLevel.Info);
+					index++;
+				}
 			}
 		}
 
-		private static float CalculateCrossValidationAccuracy(List<Datum> data)
+		private static float CalculateCrossValidationAccuracy(
+			Dictionary<uint, Dictionary<uint, Datum>> dataByFeatureAndId,
+			IEnumerable<uint> selectedFeatures,
+			uint featureToAdd)
 		{
-			const double range = float.MaxValue - (double) float.MinValue;
-			double value = new Random().NextDouble();
+			uint[] features =
+				new uint[] { featureToAdd }.ToArray().Concat(selectedFeatures).ToArray();
 
-			return (float) ((value * range) + float.MinValue);
+			uint[] ids = dataByFeatureAndId.First().Value.Keys.ToArray();
+
+			uint successfullyClassifiedIdCount = 0;
+
+			for (uint i = 0; i < ids.Length; i++)
+			{
+				uint currentId = ids[i];
+
+				if (ClassifyNeighbors(currentId, ids, dataByFeatureAndId, features))
+				{
+					successfullyClassifiedIdCount++;
+				}
+			}
+
+			return (float) successfullyClassifiedIdCount / ids.Length;
+		}
+
+		private static bool ClassifyNeighbors(
+			uint currentId,
+			IReadOnlyList<uint> ids,
+			Dictionary<uint, Dictionary<uint, Datum>> dataByFeatureAndId,
+			IReadOnlyList<uint> features)
+		{
+			uint nearestNeighborId = 0;
+			double lowestDistance = double.MaxValue;
+
+			for (int i = 0; i < ids.Count; i++)
+			{
+				uint id = ids[i];
+
+				if (id == currentId)
+				{
+					continue;
+				}
+
+				List<double> differenceValues = new List<double>();
+
+				for (int j = 0; j < features.Count; j++)
+				{
+					uint feature = features[j];
+
+					Dictionary<uint, Datum> dataById = dataByFeatureAndId[feature];
+
+					double difference =
+						dataById[currentId].FeatureValue - dataById[id].FeatureValue;
+
+					differenceValues.Add(difference);
+				}
+
+				double distance = CalculateDistance(differenceValues);
+
+				if (distance <= lowestDistance)
+				{
+					lowestDistance = distance;
+					nearestNeighborId = id;
+				}
+			}
+
+			Dictionary<uint, Datum> firstDataById = dataByFeatureAndId.First().Value;
+			IDatumIdentification currentDatumIdentification = firstDataById[currentId];
+
+			IDatumIdentification nearestNeighborDatumIdentification =
+				firstDataById[nearestNeighborId];
+
+			return Math.Abs(
+					nearestNeighborDatumIdentification.ClassValue -
+					currentDatumIdentification.ClassValue) <
+				0.001f;
+		}
+
+		private static double CalculateDistance(IList<double> differenceValues)
+		{
+			double powerSum = 0f;
+
+			for (int i = 0; i < differenceValues.Count; i++)
+			{
+				powerSum += Math.Pow(differenceValues[i], 2);
+			}
+
+			return Math.Sqrt(powerSum);
 		}
 	}
 }
