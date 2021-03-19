@@ -71,54 +71,55 @@ namespace FeatureSelection.Scripts
 		private static void BackwardSearch(
 			Dictionary<uint, Dictionary<uint, Datum>> dataByFeatureAndId)
 		{
-			HashSet<uint> selectedFeatures = new HashSet<uint>(dataByFeatureAndId.Keys);
+			HashSet<uint> availableFeatures = new HashSet<uint>(dataByFeatureAndId.Keys);
 
 			uint level = 1;
 
-			while (selectedFeatures.Count > 0)
+			while (availableFeatures.Count > 0)
 			{
 				LogUtility.Log($"Traversing search tree level '{level}' ...", LogLevel.Trace);
 				uint selectedFeature = 0;
-				float selectedFeatureAccuracy = 0;
+				float selectedFeatureAccuracy = 1;
 
-				foreach (uint unselectedFeature in selectedFeatures)
+				foreach (uint currentFeature in availableFeatures)
 				{
 					LogUtility.Log(
-						$"Considering removing feature '{unselectedFeature}' ...",
-						LogLevel.Trace);
+						$"Considering removing feature '{currentFeature}' ...",
+						LogLevel.Info);
 
 					uint[] features = PrepareBackwardSearchFeatures(
-						selectedFeatures,
-						unselectedFeature);
+						availableFeatures,
+						currentFeature);
 
 					float accuracy = SearchUtility.CrossValidateAccuracy(
 						dataByFeatureAndId,
 						features);
 
-					LogUtility.Log($"Feature accuracy '{accuracy}'.", LogLevel.Trace);
+					LogUtility.Log($"Feature accuracy '{accuracy}'.", LogLevel.Info);
 
-					if (accuracy >= selectedFeatureAccuracy)
+					if (accuracy <= selectedFeatureAccuracy)
 					{
 						selectedFeatureAccuracy = accuracy;
-						selectedFeature = unselectedFeature;
+						selectedFeature = currentFeature;
 					}
 				}
+				
+				availableFeatures.Remove(selectedFeature);
 
 				LogUtility.Log(
 					$"At search tree level '{level}', removed feature '{selectedFeature}' resulting in accuracy '{selectedFeatureAccuracy}'.",
 					LogLevel.Info);
 
-				selectedFeatures.Remove(selectedFeature);
 				level++;
 			}
 		}
 
 		private static uint[] PrepareBackwardSearchFeatures(
-			IEnumerable<uint> selectedFeatures,
-			uint unselectedFeature)
+			IEnumerable<uint> availableFeatures,
+			uint currentFeature)
 		{
-			List<uint> features = new List<uint>(selectedFeatures);
-			features.Remove(unselectedFeature);
+			List<uint> features = new List<uint>(availableFeatures);
+			features.Remove(currentFeature);
 
 			return features.ToArray();
 		}

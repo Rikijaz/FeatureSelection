@@ -11,16 +11,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ea59e96-326f-4a61-8ba5-e3f8ed2a2cce" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/FeatureSelection/Scripts/LogUtility.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FeatureSelection/Scripts/SearchStrategy.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FeatureSelection/Scripts/SearchUtility.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.FeatureSelection/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FeatureSelection/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FeatureSelection/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FeatureSelection/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeatureSelection/FeatureSelection.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/FeatureSelection/FeatureSelection.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeatureSelection/Scripts/Data/Datum.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeatureSelection/Scripts/Data/Datum.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeatureSelection/Scripts/Data/IDatumIdentification.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeatureSelection/Scripts/LogLevel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeatureSelection/Scripts/LogLevel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FeatureSelection/Scripts/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeatureSelection/Scripts/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FeatureSelection/bin/Release/FeatureSelection.exe" beforeDir="false" afterPath="$PROJECT_DIR$/FeatureSelection/bin/Release/FeatureSelection.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FeatureSelection/bin/Release/FeatureSelection.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/FeatureSelection/bin/Release/FeatureSelection.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FeatureSelection/obj/Release/FeatureSelection.exe" beforeDir="false" afterPath="$PROJECT_DIR$/FeatureSelection/obj/Release/FeatureSelection.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FeatureSelection/obj/Release/FeatureSelection.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/FeatureSelection/obj/Release/FeatureSelection.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,9 +46,10 @@
       <option value="$PROJECT_DIR$/FeatureSelection/Scripts/DataBuilder.cs" />
       <option value="$PROJECT_DIR$/FeatureSelection/Scripts/Data/DataBuilder.cs" />
       <option value="$PROJECT_DIR$/FeatureSelection/Resources/large_data.txt" />
-      <option value="$PROJECT_DIR$/FeatureSelection/Scripts/Data/Datum.cs" />
       <option value="$PROJECT_DIR$/FeatureSelection/Scripts/SearchStrategy.cs" />
       <option value="$PROJECT_DIR$/FeatureSelection/Scripts/SearchUtility.cs" />
+      <option value="$PROJECT_DIR$/FeatureSelection/Scripts/LogLevel.cs" />
+      <option value="$PROJECT_DIR$/FeatureSelection/Scripts/Data/Datum.cs" />
       <option value="$PROJECT_DIR$/FeatureSelection/Scripts/Program.cs" />
     </changedPaths>
   </component>
@@ -103,7 +100,7 @@
       <updated>1616127271772</updated>
       <workItem from="1616127277446" duration="11274000" />
       <workItem from="1616140773591" duration="5061000" />
-      <workItem from="1616180857925" duration="2238000" />
+      <workItem from="1616180857925" duration="4346000" />
     </task>
     <servers />
   </component>
