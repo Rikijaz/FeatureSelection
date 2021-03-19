@@ -1,0 +1,6 @@
+C:\Projects\test_shit\FeatureSelection\FeatureSelection\bin\Release\FeatureSelection.exe
+C:\Projects\test_shit\FeatureSelection\FeatureSelection\bin\Release\FeatureSelection.pdb
+C:\Projects\test_shit\FeatureSelection\FeatureSelection\obj\Release\FeatureSelection.csprojAssemblyReference.cache
+C:\Projects\test_shit\FeatureSelection\FeatureSelection\obj\Release\FeatureSelection.csproj.CoreCompileInputs.cache
+C:\Projects\test_shit\FeatureSelection\FeatureSelection\obj\Release\FeatureSelection.exe
+C:\Projects\test_shit\FeatureSelection\FeatureSelection\obj\Release\FeatureSelection.pdb

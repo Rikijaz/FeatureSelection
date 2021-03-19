@@ -3,6 +3,6 @@
 	public enum LogLevel
 	{
 		Trace,
-		Info
+		Info,
 	}
 }
