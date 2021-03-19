@@ -1,23 +1,18 @@
-﻿#region
-
-using System.Collections.Generic;
-
-#endregion
-
-namespace FeatureSelection.Scripts.Data
+﻿namespace FeatureSelection.Scripts.Data
 {
-	public class Datum
+	public readonly struct Datum
 	{
-		public Datum(double classValue, IReadOnlyDictionary<uint, double> valuesByFeature)
+		public Datum(double classValue, uint feature, double featureValue)
 		{
 			ClassValue = classValue;
-			ValuesByFeature = valuesByFeature;
+			Feature = feature;
+			FeatureValue = featureValue;
 		}
 
 		public double ClassValue { get; }
 
-		private IReadOnlyDictionary<uint, double> ValuesByFeature { get; }
+		public uint Feature { get; }
 
-		public double GetFeatureValue(uint feature) => ValuesByFeature[feature];
+		public double FeatureValue { get; }
 	}
 }

@@ -8,12 +8,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ea59e96-326f-4a61-8ba5-e3f8ed2a2cce" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/FeatureSelection/Scripts/DataBuilder.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FeatureSelection/Scripts/Datum.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FeatureSelection/Scripts/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FeatureSelection/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FeatureSelection/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeatureSelection/FeatureSelection.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/FeatureSelection/FeatureSelection.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeatureSelection/Program.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FeatureSelection/Scripts/Data/DataBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeatureSelection/Scripts/Data/DataBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FeatureSelection/Scripts/Data/Datum.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeatureSelection/Scripts/Data/Datum.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FeatureSelection/Scripts/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeatureSelection/Scripts/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FeatureSelection/bin/Debug/FeatureSelection.exe" beforeDir="false" afterPath="$PROJECT_DIR$/FeatureSelection/bin/Debug/FeatureSelection.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FeatureSelection/bin/Debug/FeatureSelection.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/FeatureSelection/bin/Debug/FeatureSelection.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FeatureSelection/obj/Debug/FeatureSelection.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/FeatureSelection/obj/Debug/FeatureSelection.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FeatureSelection/obj/Debug/FeatureSelection.exe" beforeDir="false" afterPath="$PROJECT_DIR$/FeatureSelection/obj/Debug/FeatureSelection.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FeatureSelection/obj/Debug/FeatureSelection.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/FeatureSelection/obj/Debug/FeatureSelection.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +40,9 @@
       <option value="$PROJECT_DIR$/FeatureSelection/Program.cs" />
       <option value="$PROJECT_DIR$/FeatureSelection/DataBuilder.cs" />
       <option value="$PROJECT_DIR$/FeatureSelection/Scripts/DataBuilder.cs" />
+      <option value="$PROJECT_DIR$/FeatureSelection/Scripts/Data/Datum.cs" />
+      <option value="$PROJECT_DIR$/FeatureSelection/Scripts/Data/DataBuilder.cs" />
+      <option value="$PROJECT_DIR$/FeatureSelection/Scripts/Program.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1pxabyVD4IXfQHbmbexSvSJrto4" />
@@ -84,7 +90,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1616127271772</updated>
-      <workItem from="1616127277446" duration="2509000" />
+      <workItem from="1616127277446" duration="4153000" />
     </task>
     <servers />
   </component>
@@ -112,10 +118,10 @@
           <line>31</line>
           <properties documentPath="C:\Projects\test_shit\FeatureSelection\FeatureSelection\Program.cs" initialLine="39" containingFunctionPresentation="method 'test'">
             <startOffsets>
-              <option value="749" />
+              <option value="914" />
             </startOffsets>
             <endOffsets>
-              <option value="788" />
+              <option value="953" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="1" />
