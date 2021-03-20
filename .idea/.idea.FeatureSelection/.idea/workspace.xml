@@ -11,20 +11,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ea59e96-326f-4a61-8ba5-e3f8ed2a2cce" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/FeatureSelection/Scripts/SearchStrategies/BackwardSearchStrategy.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FeatureSelection/Scripts/SearchStrategies/ForwardSearchStrategy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.FeatureSelection/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FeatureSelection/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FeatureSelection/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FeatureSelection/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeatureSelection/FeatureSelection.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/FeatureSelection/FeatureSelection.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FeatureSelection/Scripts/Data/DataBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeatureSelection/Scripts/Data/DataBuilder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeatureSelection/Scripts/Data/Datum.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeatureSelection/Scripts/Data/Datum.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeatureSelection/Scripts/LogLevel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeatureSelection/Scripts/Log/LogLevel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeatureSelection/Scripts/LogUtility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeatureSelection/Scripts/Log/LogUtility.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FeatureSelection/Scripts/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeatureSelection/Scripts/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeatureSelection/Scripts/SearchStrategy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeatureSelection/Scripts/SearchStrategies/SearchStrategy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeatureSelection/Scripts/SearchUtility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeatureSelection/Scripts/SearchStrategies/SearchUtility.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FeatureSelection/bin/Release/FeatureSelection.exe" beforeDir="false" afterPath="$PROJECT_DIR$/FeatureSelection/bin/Release/FeatureSelection.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FeatureSelection/bin/Release/FeatureSelection.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/FeatureSelection/bin/Release/FeatureSelection.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FeatureSelection/obj/Release/FeatureSelection.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/FeatureSelection/obj/Release/FeatureSelection.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FeatureSelection/obj/Release/FeatureSelection.exe" beforeDir="false" afterPath="$PROJECT_DIR$/FeatureSelection/obj/Release/FeatureSelection.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FeatureSelection/obj/Release/FeatureSelection.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/FeatureSelection/obj/Release/FeatureSelection.pdb" afterDir="false" />
     </list>
@@ -54,7 +46,6 @@
       <option value="$PROJECT_DIR$/FeatureSelection/Program.cs" />
       <option value="$PROJECT_DIR$/FeatureSelection/DataBuilder.cs" />
       <option value="$PROJECT_DIR$/FeatureSelection/Scripts/DataBuilder.cs" />
-      <option value="$PROJECT_DIR$/FeatureSelection/Scripts/Data/DataBuilder.cs" />
       <option value="$PROJECT_DIR$/FeatureSelection/Resources/large_data.txt" />
       <option value="$PROJECT_DIR$/FeatureSelection/Scripts/SearchStrategy.cs" />
       <option value="$PROJECT_DIR$/FeatureSelection/Scripts/LogLevel.cs" />
@@ -62,10 +53,11 @@
       <option value="$PROJECT_DIR$/FeatureSelection/Scripts/ForwardSearchStrategy.cs" />
       <option value="$PROJECT_DIR$/FeatureSelection/Scripts/BackwardSearchStrategy.cs" />
       <option value="$PROJECT_DIR$/FeatureSelection/Scripts/SearchStrategies/SearchStrategy.cs" />
-      <option value="$PROJECT_DIR$/FeatureSelection/Scripts/Program.cs" />
       <option value="$PROJECT_DIR$/FeatureSelection/Scripts/Data/Datum.cs" />
       <option value="$PROJECT_DIR$/FeatureSelection/Scripts/Log/LogUtility.cs" />
       <option value="$PROJECT_DIR$/FeatureSelection/Scripts/SearchStrategies/ForwardSearchStrategy.cs" />
+      <option value="$PROJECT_DIR$/FeatureSelection/Scripts/Program.cs" />
+      <option value="$PROJECT_DIR$/FeatureSelection/Scripts/Data/DataBuilder.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1pxabyVD4IXfQHbmbexSvSJrto4" />

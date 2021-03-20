@@ -1,5 +1,6 @@
 ﻿#region
 
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -12,22 +13,26 @@ namespace FeatureSelection.Scripts.Data
 {
 	public static class DataBuilder
 	{
-		public static (Dictionary<uint, Dictionary<uint, Datum>> smallDataByFeature,
-			Dictionary<uint, Dictionary<uint, Datum>> largeDataByFeature)
-			BuildAllData()
+		private const string FilePathFormat = @"../../Resources/{0}";
+
+		public static bool BuildData(
+			string dataFileName,
+			out Dictionary<uint, Dictionary<uint, Datum>> dataByFeatureAndId)
 		{
-			Dictionary<uint, Dictionary<uint, Datum>> smallDataByFeature =
-				BuildData(@"../../Resources/small_data.txt");
+			string dataFilePath = string.Format(FilePathFormat, dataFileName);
+			string[] lines;
 
-			Dictionary<uint, Dictionary<uint, Datum>> largeDataByFeature =
-				BuildData(@"../../Resources/large_data.txt");
+			try
+			{
+				lines = File.ReadAllLines(dataFilePath);
+			}
+			catch (FileNotFoundException fileNotFoundException)
+			{
+				Console.WriteLine(fileNotFoundException);
+				dataByFeatureAndId = null;
 
-			return (smallDataByFeature, largeDataByFeature);
-		}
-
-		private static Dictionary<uint, Dictionary<uint, Datum>> BuildData(string dataFilePath)
-		{
-			string[] lines = File.ReadAllLines(dataFilePath);
+				return false;
+			}
 
 			List<(uint, double, Dictionary<uint, double>)> featureValuesByClassAndFeature =
 				new List<(uint, double, Dictionary<uint, double>)>();
@@ -46,8 +51,7 @@ namespace FeatureSelection.Scripts.Data
 
 			int featureCount = featureValuesByClassAndFeature.First().Item3.Count;
 
-			Dictionary<uint, Dictionary<uint, Datum>> dataByFeatureAndId =
-				new Dictionary<uint, Dictionary<uint, Datum>>();
+			dataByFeatureAndId = new Dictionary<uint, Dictionary<uint, Datum>>();
 
 			for (uint i = 1; i <= featureCount; ++i)
 			{
@@ -68,7 +72,7 @@ namespace FeatureSelection.Scripts.Data
 				}
 			}
 
-			return dataByFeatureAndId;
+			return true;
 		}
 
 		private static (double classValue, Dictionary<uint, double> valuesByFeature) ParseData(

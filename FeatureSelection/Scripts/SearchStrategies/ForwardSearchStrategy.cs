@@ -44,8 +44,6 @@ namespace FeatureSelection.Scripts.SearchStrategies
 						dataByFeatureAndId,
 						features);
 
-					LogUtility.Log($"Feature accuracy '{accuracy}'.", LogLevel.Trace);
-
 					if (accuracy >= selectedFeatureAccuracy)
 					{
 						selectedFeatureAccuracy = accuracy;
