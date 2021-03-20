@@ -57,6 +57,9 @@ namespace FeatureSelection.Scripts.SearchStrategies
 
 				unselectedFeatures.Remove(selectedFeature);
 				selectedFeatures.Add(selectedFeature);
+				
+				LogAvailableFeatures(selectedFeatures);
+
 				level++;
 			}
 		}

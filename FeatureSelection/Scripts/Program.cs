@@ -57,7 +57,7 @@ namespace FeatureSelection.Scripts
 			}
 			while (searchStrategy == null);
 
-			ForwardSearchStrategy.Instance.Search(dataByFeatureAndId);
+			searchStrategy.Search(dataByFeatureAndId);
 		}
 	}
 }

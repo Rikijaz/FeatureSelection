@@ -43,6 +43,8 @@ namespace FeatureSelection.Scripts.SearchStrategies
 						dataByFeatureAndId,
 						features);
 
+					LogUtility.Log($"Feature accuracy '{accuracy}'.", LogLevel.Trace);
+
 					if (accuracy >= selectedFeatureAccuracy)
 					{
 						selectedFeatureAccuracy = accuracy;
@@ -59,6 +61,8 @@ namespace FeatureSelection.Scripts.SearchStrategies
 				LogUtility.Log(
 					$"At search tree level '{level}', removed feature '{selectedFeature}' resulting in accuracy '{newAccuracy}'.",
 					LogLevel.Info);
+				
+				LogAvailableFeatures(availableFeatures);
 
 				level++;
 			}
